@@ -1,0 +1,334 @@
+/* Import Font Futuristik & Standar */
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap");
+
+/* CSS Variables untuk Tema Neon Dark */
+:root {
+  --bg-base: #050505; /* Hitam pekat */
+  --bg-surface: #111115; /* Abu-abu sangat gelap buat card */
+  --text-main: #e2e8f0; /* Teks terang */
+  --text-muted: #94a3b8;
+
+  /* Warna Neon */
+  --neon-cyan: #00f3ff;
+  --neon-purple: #bc13fe;
+  --neon-green: #00ff66;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-main);
+  background-color: var(--bg-base);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px; /* Efek grid tipis ala matrix */
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Orbitron", sans-serif; /* Font ala sci-fi */
+  letter-spacing: 2px;
+}
+
+/* Hero Section */
+.hero {
+  background: radial-gradient(
+    circle at center,
+    #130924 0%,
+    var(--bg-base) 100%
+  );
+  border-bottom: 2px solid var(--neon-cyan);
+  box-shadow: 0 5px 30px rgba(0, 243, 255, 0.1);
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  text-shadow:
+    0 0 10px var(--neon-cyan),
+    0 0 20px var(--neon-cyan);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Tombol Hero ala Cyberpunk */
+.btn-hero {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--neon-cyan);
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--neon-cyan);
+  border-radius: 4px;
+  box-shadow:
+    0 0 10px var(--neon-cyan) inset,
+    0 0 15px var(--neon-cyan);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-hero:hover {
+  background-color: var(--neon-cyan);
+  color: var(--bg-base);
+  box-shadow:
+    0 0 20px var(--neon-cyan) inset,
+    0 0 40px var(--neon-cyan);
+  transform: scale(1.05);
+}
+
+/* Container & Typography */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 20px;
+}
+
+.section-title {
+  color: var(--text-main);
+  font-size: 2rem;
+  margin-bottom: 40px;
+  display: inline-block;
+  position: relative;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Garis bawah neon */
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 60%;
+  height: 3px;
+  background: var(--neon-purple);
+  box-shadow: 0 0 10px var(--neon-purple);
+}
+
+/* Grid Info Cards */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 80px;
+}
+
+.info-card {
+  background-color: var(--bg-surface);
+  padding: 40px 30px;
+  border-radius: 8px;
+  border: 1px solid #222;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.info-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.info-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.info-card p {
+  color: var(--text-muted);
+}
+
+/* Neon Borders untuk Card */
+.neon-border-cyan {
+  border-top: 3px solid var(--neon-cyan);
+}
+.neon-border-cyan:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 -5px 25px rgba(0, 243, 255, 0.2);
+  border-color: var(--neon-cyan);
+}
+
+.neon-border-purple {
+  border-top: 3px solid var(--neon-purple);
+}
+.neon-border-purple:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 -5px 25px rgba(188, 19, 254, 0.2);
+  border-color: var(--neon-purple);
+}
+
+/* Tabel Cyberpunk */
+.table-responsive {
+  overflow-x: auto;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: var(--bg-surface);
+}
+
+.minimal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.minimal-table th,
+.minimal-table td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #222;
+}
+
+.minimal-table th {
+  background-color: #0a0a0f;
+  color: var(--neon-cyan);
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: "Orbitron", sans-serif;
+  border-bottom: 2px solid var(--neon-cyan);
+}
+
+.minimal-table td {
+  color: var(--text-muted);
+}
+.minimal-table td strong {
+  color: var(--text-main);
+}
+
+/* Badges Neon */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background: transparent;
+}
+.badge.cyan {
+  border: 1px solid var(--neon-cyan);
+  color: var(--neon-cyan);
+  box-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+}
+.badge.purple {
+  border: 1px solid var(--neon-purple);
+  color: var(--neon-purple);
+  box-shadow: 0 0 5px rgba(188, 19, 254, 0.5);
+}
+
+/* Footer & Tombol WA Neon Green */
+.contact-section {
+  background-color: #030303;
+  border-top: 1px solid #222;
+  text-align: center;
+  padding: 80px 20px 40px 20px;
+}
+
+.contact-section h2 {
+  color: #fff;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.contact-section p {
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.btn-wa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: transparent;
+  color: var(--neon-green);
+  padding: 16px 40px;
+  font-size: 1.2rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 2px solid var(--neon-green);
+  box-shadow:
+    0 0 10px var(--neon-green) inset,
+    0 0 20px rgba(0, 255, 102, 0.4);
+  transition: 0.3s;
+}
+
+.btn-wa:hover {
+  background-color: var(--neon-green);
+  color: var(--bg-base);
+  box-shadow:
+    0 0 20px var(--neon-green) inset,
+    0 0 40px var(--neon-green);
+  transform: scale(1.05);
+}
+
+.footer-bottom {
+  margin-top: 80px;
+  border-top: 1px solid #222;
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .minimal-table thead {
+    display: none;
+  }
+  .minimal-table,
+  .minimal-table tbody,
+  .minimal-table tr,
+  .minimal-table td {
+    display: block;
+    width: 100%;
+  }
+  .minimal-table td {
+    position: relative;
+    padding-left: 45%;
+    border-bottom: 1px solid #222;
+    background: var(--bg-surface);
+  }
+  .minimal-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-family: "Orbitron", sans-serif;
+    font-size: 0.8rem;
+    color: var(--neon-purple);
+  }
+  .minimal-table tr {
+    border-bottom: 2px solid var(--neon-cyan);
+    margin-bottom: 10px;
+    display: block;
+  }
+}
