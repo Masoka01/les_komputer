@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kursus Komputer | SD, SMP, SMA</title>
+    <title>Mayoni.Code | Kursus Komputer SD, SMP, SMA</title>
 
-    <!-- Preview Image -->
+    <!-- OG Meta -->
     <meta property="og:title" content="Mayoni.Code" />
     <meta
       property="og:description"
@@ -13,7 +13,7 @@
     />
     <meta property="og:image" content="https://i.imgur.com/xnarEPF.jpeg" />
 
-    <!-- Icon Tab-->
+    <!-- Favicon -->
     <link
       type="image/png"
       sizes="32x32"
@@ -21,180 +21,297 @@
       href="icon/icons8-computer-32.png"
     />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="les.css" />
-
-    <!-- Gambar -->
-    <link rel="preload" as="image" href="img/cok.webp" />
-
-    <!-- Font -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;800&display=swap"
       rel="stylesheet"
-      media="print"
-      onload="this.media = 'all'"
     />
-    <noscript
-      ><link href="https://fonts.googleapis.com/..." rel="stylesheet"
-    /></noscript>
+
+    <!-- Preload hero image -->
+    <link rel="preload" as="image" href="img/cok.webp" />
+
+    <link rel="stylesheet" href="les.css" />
   </head>
   <body>
+    <!-- ══ SCANLINE OVERLAY ══ -->
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <!-- ══ NAVBAR ══ -->
+    <nav class="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">
+          <span class="logo-bracket">[</span>MAYONI<span class="logo-dot"
+            >.</span
+          ><span class="logo-code">CODE</span
+          ><span class="logo-bracket">]</span>
+        </a>
+        <a href="#kontak" class="nav-cta">DAFTAR_SEKARANG</a>
+      </div>
+    </nav>
+
+    <!-- ══ HERO ══ -->
     <header class="hero">
+      <div class="hero-bg-img"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-grid-lines" aria-hidden="true"></div>
+
       <div class="hero-content">
-        <h1>Mayoni.Code</h1>
-        <p>
+        <div class="hero-tag">// KURSUS_KOMPUTER.v2026</div>
+        <h1 class="hero-title">
+          MAYONI<span class="title-dot">.</span
+          ><span class="title-code">CODE</span>
+        </h1>
+        <p class="hero-sub">
           Program kursus komputer masa depan untuk tingkat SD, SMP, dan SMA.
-          Level up skill kamu sekarang.
+          Kuasai teknologi, bangun masa depanmu.
         </p>
-        <a href="#kontak" class="btn-hero">INITIALIZE_LEARNING</a>
+        <div class="hero-actions">
+          <a href="#kontak" class="btn-primary">INITIALIZE_LEARNING →</a>
+          <a href="#kurikulum" class="btn-ghost">LIHAT_PROGRAM</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">3</span><span class="stat-label">Level</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">50K</span
+            ><span class="stat-label">/ Bulan</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">50%</span
+            ><span class="stat-label">Disc. Yatim</span>
+          </div>
+        </div>
       </div>
     </header>
 
-    <main class="container">
-      <section class="info-section">
-        <h2 class="section-title">SYSTEM_INFO</h2>
-        <div class="grid-2">
-          <div class="info-card neon-border-cyan">
-            <div class="icon">💻</div>
-            <h3>Peralatan Belajar</h3>
-            <p>
-              Setiap user diwajibkan membawa
-              <strong>laptop pribadi</strong> untuk kenyamanan praktik dan
-              menyimpan portofolio langsung di *local drive*.
-            </p>
+    <main>
+      <!-- ══ INFO SECTION ══ -->
+      <section class="section" id="info">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">01 /</span>
+            <h2 class="section-title">SYSTEM_INFO</h2>
           </div>
-          <div class="info-card neon-border-purple">
-            <div class="icon">⚡</div>
-            <h3>Program Peduli</h3>
-            <p>
-              Kami memberikan <strong>Diskon 50%</strong> biaya pendidikan
-              khusus bagi user berstatus <strong>Anak Yatim</strong> sebagai
-              bentuk *support system* kami.
-            </p>
+          <div class="info-grid">
+            <div class="info-card card-cyan">
+              <div class="card-icon-wrap cyan-glow">💻</div>
+              <h3>Peralatan Belajar</h3>
+              <p>
+                Setiap user diwajibkan membawa
+                <strong>laptop pribadi</strong> untuk kenyamanan praktik dan
+                menyimpan portofolio langsung di local drive.
+              </p>
+              <div class="card-line cyan-line"></div>
+            </div>
+            <div class="info-card card-purple">
+              <div class="card-icon-wrap purple-glow">⚡</div>
+              <h3>Program Peduli</h3>
+              <p>
+                Kami memberikan <strong>Diskon 50%</strong> biaya pendidikan
+                khusus bagi user berstatus <strong>Anak Yatim</strong> sebagai
+                bentuk support system kami.
+              </p>
+              <div class="card-line purple-line"></div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="curriculum-section">
-        <h2 class="section-title">DATABASE_KURIKULUM</h2>
-        <div class="table-responsive">
-          <table class="minimal-table">
-            <thead>
-              <tr>
-                <th>Tingkat</th>
-                <th>Materi Inti</th>
-                <th>Fokus Pembelajaran</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td data-label="Tingkat">
-                  <strong>Sekolah Dasar (SD)</strong>
-                </td>
-                <td data-label="Materi Inti">
-                  <span class="badge cyan">Mengetik</span>
-                  <span class="badge purple">MS Office</span>
-                </td>
-                <td data-label="Fokus Pembelajaran">
-                  Teknik mengetik 10 jari dasar, pengenalan Word, Excel, dan
-                  PowerPoint tingkat pemula yang menyenangkan.
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Tingkat">
-                  <strong>Menengah Pertama (SMP)</strong>
-                </td>
-                <td data-label="Materi Inti">
-                  <span class="badge cyan">Office Pro</span>
-                  <span class="badge purple">AI Basics</span>
-                </td>
-                <td data-label="Fokus Pembelajaran">
-                  Penggunaan Office tingkat lanjut untuk tugas dan *prompt
-                  engineering* AI (seperti ChatGPT) untuk produktivitas.
-                </td>
-              </tr>
-              <tr>
-                <td data-label="Tingkat">
-                  <strong>Menengah Atas (SMA)</strong>
-                </td>
-                <td data-label="Materi Inti">
-                  <span class="badge cyan">Basic Coding</span>
-                  <span class="badge purple">HTML/CSS</span>
-                </td>
-                <td data-label="Fokus Pembelajaran">
-                  Pemrograman dasar, melatih logika algoritma, dan praktik
-                  langsung membangun struktur website sederhana dari nol.
-                </td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- ══ KURIKULUM ══ -->
+      <section class="section section-dark" id="kurikulum">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">02 /</span>
+            <h2 class="section-title">DATABASE_KURIKULUM</h2>
+          </div>
+
+          <!-- Desktop Table -->
+          <div class="table-wrap">
+            <table class="cyber-table">
+              <thead>
+                <tr>
+                  <th>Tingkat</th>
+                  <th>Materi Inti</th>
+                  <th>Fokus Pembelajaran</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Tingkat">
+                    <strong>Sekolah Dasar (SD)</strong>
+                  </td>
+                  <td data-label="Materi Inti">
+                    <span class="badge cyan">Mengetik</span>
+                    <span class="badge purple">MS Office</span>
+                  </td>
+                  <td data-label="Fokus">
+                    Teknik mengetik 10 jari dasar, pengenalan Word, Excel, dan
+                    PowerPoint tingkat pemula yang menyenangkan.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Tingkat">
+                    <strong>Menengah Pertama (SMP)</strong>
+                  </td>
+                  <td data-label="Materi Inti">
+                    <span class="badge cyan">Office Pro</span>
+                    <span class="badge purple">AI Basics</span>
+                  </td>
+                  <td data-label="Fokus">
+                    Penggunaan Office tingkat lanjut untuk tugas dan prompt
+                    engineering AI (seperti ChatGPT) untuk produktivitas.
+                  </td>
+                </tr>
+                <tr>
+                  <td data-label="Tingkat">
+                    <strong>Menengah Atas (SMA)</strong>
+                  </td>
+                  <td data-label="Materi Inti">
+                    <span class="badge cyan">Basic Coding</span>
+                    <span class="badge purple">HTML/CSS</span>
+                  </td>
+                  <td data-label="Fokus">
+                    Pemrograman dasar, melatih logika algoritma, dan praktik
+                    langsung membangun struktur website sederhana dari nol.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Mobile Cards (hidden on desktop) -->
+          <div class="mobile-curriculum">
+            <div class="curr-card">
+              <div class="curr-level cyan-text">SEKOLAH DASAR</div>
+              <div class="curr-badges">
+                <span class="badge cyan">Mengetik</span>
+                <span class="badge purple">MS Office</span>
+              </div>
+              <p>
+                Teknik mengetik 10 jari dasar, pengenalan Word, Excel, dan
+                PowerPoint tingkat pemula yang menyenangkan.
+              </p>
+            </div>
+            <div class="curr-card">
+              <div class="curr-level purple-text">MENENGAH PERTAMA</div>
+              <div class="curr-badges">
+                <span class="badge cyan">Office Pro</span>
+                <span class="badge purple">AI Basics</span>
+              </div>
+              <p>
+                Penggunaan Office tingkat lanjut dan prompt engineering AI untuk
+                produktivitas belajar.
+              </p>
+            </div>
+            <div class="curr-card">
+              <div class="curr-level cyan-text">MENENGAH ATAS</div>
+              <div class="curr-badges">
+                <span class="badge cyan">Basic Coding</span>
+                <span class="badge purple">HTML/CSS</span>
+              </div>
+              <p>
+                Pemrograman dasar, logika algoritma, dan membangun struktur
+                website dari nol.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="pricing-section">
-        <h2 class="section-title">PRICING_TABLE</h2>
-        <div class="grid-3">
-          <div class="price-card neon-border-cyan">
-            <div class="price-level">SD</div>
-            <div class="price-amount">Rp50.000</div>
-            <div class="price-period">/ bulan</div>
-            <ul class="price-features">
-              <li>Teknik mengetik 10 jari</li>
-              <li>MS Word, Excel, PowerPoint</li>
-              <!-- <li>Sertifikat kelulusan</li> -->
-            </ul>
-            <a href="#kontak" class="btn-price">DAFTAR</a>
+      <!-- ══ PRICING ══ -->
+      <section class="section" id="harga">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-tag">03 /</span>
+            <h2 class="section-title">PRICING_TABLE</h2>
           </div>
-          <div class="price-card neon-border-purple">
-            <div class="price-level">SMP</div>
-            <div class="price-amount">Rp50.000</div>
-            <div class="price-period">/ bulan</div>
-            <ul class="price-features">
-              <li>Office tingkat lanjut</li>
-              <li>AI &amp; Prompt Engineering</li>
-              <!-- <li>Sertifikat kelulusan</li> -->
-            </ul>
-            <a href="#kontak" class="btn-price btn-price-purple">DAFTAR</a>
+          <div class="pricing-grid">
+            <div class="price-card price-cyan">
+              <div class="price-top">
+                <span class="price-lvl">SD</span>
+                <div class="price-badge-top">BASIC</div>
+              </div>
+              <div class="price-amount">Rp<span>50.000</span></div>
+              <div class="price-period">per bulan</div>
+              <ul class="features">
+                <li>Teknik mengetik 10 jari</li>
+                <li>MS Word, Excel, PowerPoint</li>
+              </ul>
+              <a href="#kontak" class="btn-price btn-cyan">DAFTAR →</a>
+            </div>
+
+            <div class="price-card price-purple price-featured">
+              <div class="featured-label">POPULER</div>
+              <div class="price-top">
+                <span class="price-lvl">SMP</span>
+                <div class="price-badge-top">PRO</div>
+              </div>
+              <div class="price-amount">Rp<span>50.000</span></div>
+              <div class="price-period">per bulan</div>
+              <ul class="features">
+                <li>Office tingkat lanjut</li>
+                <li>AI &amp; Prompt Engineering</li>
+              </ul>
+              <a href="#kontak" class="btn-price btn-purple">DAFTAR →</a>
+            </div>
+
+            <div class="price-card price-cyan">
+              <div class="price-top">
+                <span class="price-lvl">SMA</span>
+                <div class="price-badge-top">ADVANCED</div>
+              </div>
+              <div class="price-amount">Rp<span>50.000</span></div>
+              <div class="price-period">per bulan</div>
+              <ul class="features">
+                <li>Basic Coding &amp; Algoritma</li>
+                <li>HTML &amp; CSS dari nol</li>
+              </ul>
+              <a href="#kontak" class="btn-price btn-cyan">DAFTAR →</a>
+            </div>
           </div>
-          <div class="price-card neon-border-cyan">
-            <div class="price-level">SMA</div>
-            <div class="price-amount">Rp50.000</div>
-            <div class="price-period">/ bulan</div>
-            <ul class="price-features">
-              <li>Basic Coding &amp; Algoritma</li>
-              <li>HTML &amp; CSS dari nol</li>
-              <!-- <li>Sertifikat kelulusan</li> -->
-            </ul>
-            <a href="#kontak" class="btn-price">DAFTAR</a>
+
+          <div class="discount-banner">
+            <span class="disc-icon">⚡</span>
+            <span
+              >Anak Yatim mendapat <strong>Diskon 50%</strong> → hanya
+              <strong>Rp25.000/bulan</strong></span
+            >
           </div>
         </div>
-        <p class="price-note">
-          * Anak Yatim mendapat <strong>Diskon 50%</strong> → hanya
-          <strong>Rp25.000/bulan</strong>
-        </p>
       </section>
     </main>
 
-    <footer class="contact-section" id="kontak">
-      <h2>READY_TO_JOIN?</h2>
-      <p>Buka koneksi dengan admin kami untuk konsultasi jadwal.</p>
-
-      <a
-        href="https://wa.me/6285161194164?text=Halo%20Mayoni.Code%2C%20saya%20ingin%20mendaftar%20kursus.%0A%0ANama%20%3A%20%0ATingkat%20%3A%20(SD%2FSMP%2FSMA)%0ANo.%20HP%20%3A%20%0AAlamat%20%3A%20%0AYatim%20%3A%20(Ya%2FTidak)%0A%0A*Khusus%20anak%20yatim%20mendapat%20diskon%2050%25%20biaya%20kursus."
-        class="btn-wa"
-      >
-        <span class="wa-icon">💬</span> CONNECT VIA WHATSAPP
-      </a>
-
-      <div class="footer-bottom">
-        <p>
-          Dsn Jolotundo RT/02 RW 04, Ds. Jolotundo, Kec. Jetis, Kab. Mojokerto
+    <!-- ══ FOOTER / KONTAK ══ -->
+    <footer class="footer" id="kontak">
+      <div class="footer-glow"></div>
+      <div class="container footer-inner">
+        <div class="footer-tag">// READY_TO_JOIN?</div>
+        <h2 class="footer-title">
+          CONNECT <span class="cyan-text">WITH US</span>
+        </h2>
+        <p class="footer-sub">
+          Buka koneksi dengan admin kami untuk konsultasi jadwal dan
+          pendaftaran.
         </p>
-        <p class="copyright">
-          &copy; 2026 Dimas Mayoni. <br />
-          All rights reserved.
+
+        <a
+          href="https://wa.me/6285161194164?text=Halo%20Mayoni.Code%2C%20saya%20ingin%20mendaftar%20kursus.%0A%0ANama%20%3A%20%0ATingkat%20%3A%20(SD%2FSMP%2FSMA)%0ANo.%20HP%20%3A%20%0AAlamat%20%3A%20%0AYatim%20%3A%20(Ya%2FTidak)%0A%0A*Khusus%20anak%20yatim%20mendapat%20diskon%2050%25%20biaya%20kursus."
+          class="btn-wa"
+        >
+          <span>💬</span> CONNECT VIA WHATSAPP
+        </a>
+
+        <div class="footer-divider"></div>
+        <p class="footer-address">
+          Dsn Jolotundo RT/02 RW 04, Ds. Jolotundo, <br> Kec. Jetis, Kab. Mojokerto
+        </p>
+        <p class="footer-copy">
+          &copy; 2026 Dimas Mayoni. All rights reserved.
         </p>
       </div>
     </footer>
