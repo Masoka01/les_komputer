@@ -28,9 +28,15 @@
   --success:       #27AE60;
   --error:         #E74C3C;
 
+  /* soft tint surfaces (flip7 component fills) */
+  --tint-cream:    #FFFDF2;
+  --tint-gold:     #FFF4CC;
+  --tint-coral:    #FDEDE7;
+
   --text-main:     #22514E;   /* deep teal-gray, readable on light bg */
   --text-muted:    #5E7A78;
   --text-dim:      #8FA8A6;
+  --gold-text-dark:#8A6D00;   /* gold badge text on light tint */
 
   --font-display:  'Baloo 2', sans-serif;
   --font-body:     'Nunito', sans-serif;
@@ -41,6 +47,8 @@
   --radius-sm: 8px; --radius-md: 16px; --radius-lg: 24px; --radius-xl: 32px; --radius-round: 999px;
 
   --border-soft:   rgba(0,0,0,.08);
+  --border-teal:   rgba(43,168,162,.2);
+  --border-teal-soft: rgba(43,168,162,.15);
 
   --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
   --shadow-md: 0 4px 16px rgba(0,0,0,.12);
@@ -53,6 +61,10 @@
   --shadow-sky-glow: 0 4px 16px rgba(93,173,226,.30);
   --shadow-title-teal: 0 2px 0 rgba(255,255,255,.6);
   --shadow-title-gold: 0 1px 0 rgba(0,0,0,.25), 0 2px 0 rgba(0,0,0,.2), 0 4px 8px rgba(0,0,0,.3);
+
+  --teal-glow-soft:   0 8px 28px rgba(43,168,162,.18);
+  --accent-glow-soft: 0 8px 32px rgba(255,210,63,.5);
+  --coral-glow-soft:  0 8px 28px rgba(239,108,74,.2);
 }
 
 /* ─── RESET ────────────────────────────── */
@@ -219,3 +231,77 @@ body {
   color: var(--primary-dark); line-height: 1.2; }
 .stat-label { font-size: .75rem; color: var(--text-muted); letter-spacing: 2px;
   text-transform: uppercase; font-weight: 700; }
+
+/* ─── SECTION HEADERS ──────────────────── */
+.section { position: relative; z-index: 1; padding: 80px 0; }
+.section-dark { background: var(--primary-bg);
+  border-top: 1px solid var(--border-teal-soft);
+  border-bottom: 1px solid var(--border-teal-soft); }
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+.section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 40px;
+  padding-bottom: 14px; border-bottom: 3px dashed var(--primary-teal); }
+.section-emoji { display: flex; align-items: center; justify-content: center;
+  width: 52px; height: 52px; border-radius: var(--radius-md);
+  background: var(--surface-card); box-shadow: var(--shadow-card);
+  font-size: 1.5rem; flex-shrink: 0; }
+.section-title { font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(1.4rem, 4vw, 2rem); color: var(--primary-dark); letter-spacing: 1px; }
+
+/* ─── INFO CARDS (base `.card` + accents) ─ */
+.card { background: var(--surface-card); border-radius: var(--radius-lg);
+  padding: 32px 28px; box-shadow: var(--shadow-card);
+  border-left: 6px solid var(--primary-teal);
+  transition: transform .25s cubic-bezier(.34,1.56,.64,1), box-shadow .25s; }
+.card:hover { transform: translateY(-4px); }
+.card-teal  { border-left-color: var(--primary-teal); }
+.card-teal:hover  { box-shadow: var(--teal-glow-soft); }
+.card-gold  { border-left-color: var(--accent-gold);
+  background: linear-gradient(135deg, var(--tint-cream) 0%, var(--surface-card) 60%);
+  box-shadow: var(--shadow-accent-glow); }
+.card-gold:hover  { box-shadow: var(--accent-glow-soft); }
+.card-coral { border-left-color: var(--coral); }
+.card-coral:hover { box-shadow: var(--coral-glow-soft); }
+
+.info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.card-icon-wrap { display: inline-flex; align-items: center; justify-content: center;
+  width: 64px; height: 64px; border-radius: var(--radius-md);
+  background: var(--primary-bg); font-size: 2rem; margin-bottom: 16px; }
+.card-gold .card-icon-wrap { background: var(--tint-gold); }
+.card h3 { font-family: var(--font-display); font-weight: 800; font-size: 1.25rem;
+  color: var(--primary-dark); margin-bottom: 10px; }
+.card p { color: var(--text-muted); font-size: .95rem; line-height: 1.7; }
+.card strong { color: var(--primary-dark); }
+
+/* ─── CURRICULUM TABLE + BADGES ─────────── */
+.table-wrap { overflow-x: auto; border-radius: var(--radius-lg);
+  border: 1px solid var(--border-teal);
+  background: var(--surface-card); box-shadow: var(--shadow-card); }
+.cyber-table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.cyber-table th { font-family: var(--font-display); font-weight: 700; font-size: .85rem;
+  color: var(--surface-card); text-transform: uppercase; letter-spacing: 1px;
+  padding: 16px 20px; background: var(--primary-teal); text-align: left; white-space: nowrap; }
+.cyber-table td { padding: 18px 20px; color: var(--text-muted);
+  border-bottom: 1px solid var(--primary-bg); vertical-align: top; }
+.cyber-table td strong { color: var(--primary-dark); }
+.cyber-table tbody tr { transition: background .2s; }
+.cyber-table tbody tr:hover { background: var(--primary-bg); }
+.cyber-table tbody tr:last-child td { border-bottom: none; }
+
+.badge { display: inline-block; padding: 4px 12px; border-radius: var(--radius-round);
+  font-family: var(--font-display); font-weight: 700; font-size: .75rem;
+  letter-spacing: 1px; margin: 2px 6px 2px 0; }
+.badge-teal  { background: var(--primary-bg); color: var(--primary-dark); border: 1px solid var(--primary-teal); }
+.badge-coral { background: var(--tint-coral); color: var(--coral-dark); border: 1px solid var(--coral); }
+.badge-gold  { background: var(--tint-gold); color: var(--gold-text-dark); border: 1px solid var(--accent-dark); }
+
+/* ─── MOBILE CURRICULUM CARDS ───────────── */
+.mobile-curriculum { display: none; }
+.curr-card { background: var(--surface-card); border-radius: var(--radius-lg);
+  border-left: 6px solid var(--primary-teal); padding: 24px 20px; box-shadow: var(--shadow-card); }
+.curr-card:nth-child(2) { border-left-color: var(--accent-gold); }
+.curr-card:nth-child(3) { border-left-color: var(--coral); }
+.curr-level { font-family: var(--font-display); font-weight: 800; font-size: .8rem;
+  letter-spacing: 2px; color: var(--primary-dark); margin-bottom: 12px; }
+.curr-card p { color: var(--text-muted); font-size: .9rem; line-height: 1.7; }
+.curr-badges { margin-bottom: 12px; }
