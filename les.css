@@ -387,3 +387,32 @@ body {
 
 /* emoji chip centered in the footer header (mirrors section-header pattern) */
 .footer .section-emoji { margin: 0 auto 14px; }
+
+/* ─── RESPONSIVE ────────────────────────── */
+@media (max-width: 768px) {
+  .hero { padding: 100px 20px 60px; }
+  .logo-plate { padding: 14px 32px; border-width: 3px; }
+  .hero-title { font-size: clamp(2.2rem, 11vw, 3.2rem); }
+  .ribbon { font-size: .8rem; letter-spacing: 2px; padding: 6px 24px; }
+  .fan-card { width: 40px; height: 64px; }
+
+  .info-grid { grid-template-columns: 1fr; gap: 16px; }
+  .table-wrap { display: none; }
+  .mobile-curriculum { display: flex; flex-direction: column; gap: 16px; }
+  .pricing-grid { grid-template-columns: 1fr; gap: 16px; }
+  .price-featured { order: -1; }
+  .hero-stats { gap: 12px; }
+  .stat { min-width: 96px; padding: 12px 18px; }
+}
+
+@media (max-width: 480px) {
+  .hero-actions { flex-direction: column; align-items: center; }
+  .btn { width: 100%; max-width: 300px; }
+  .section { padding: 60px 0; }
+  .section-emoji { width: 44px; height: 44px; font-size: 1.25rem; }
+  .section-title { font-size: 1.2rem; }
+  .price-card { padding: 28px 18px; }
+  .btn-wa { width: 100%; max-width: 340px; font-size: .9rem; }
+  .footer { padding: 60px 20px 36px; }
+  .hero-fan-cards { transform: translate(-50%, -92%); }
+}

@@ -1,29 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("MAYONI.CODE — SYSTEM.ONLINE ✅");
 
-  // ── Table row hover (desktop) ──────────────────
-  const tableRows = document.querySelectorAll(".cyber-table tbody tr");
-  tableRows.forEach((row) => {
-    row.addEventListener("mouseenter", () => {
-      row.style.backgroundColor = "rgba(0, 243, 255, 0.04)";
-      row.style.transition = "background-color 0.25s ease";
-    });
-    row.addEventListener("mouseleave", () => {
-      row.style.backgroundColor = "transparent";
-    });
-  });
-
   // ── Navbar: tambah bg solid saat scroll ──────────
   const navbar = document.querySelector(".navbar");
   if (navbar) {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 60) {
-        navbar.style.borderBottomColor = "rgba(0, 243, 255, 0.35)";
-        navbar.style.boxShadow = "0 2px 20px rgba(0, 243, 255, 0.08)";
-      } else {
-        navbar.style.borderBottomColor = "";
-        navbar.style.boxShadow = "";
-      }
+      navbar.classList.toggle("navbar-scrolled", window.scrollY > 60);
     }, { passive: true });
   }
 
