@@ -94,6 +94,7 @@ body {
 .logo-code { color: var(--accent-dark); }
 
 .nav-cta {
+  display: inline-flex; align-items: center; min-height: 44px;
   font-family: var(--font-display); font-weight: 700; font-size: .8rem;
   color: var(--primary-dark); background: linear-gradient(180deg, var(--accent-light), var(--accent-gold));
   padding: 9px 20px; border-radius: var(--radius-round);
