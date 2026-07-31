@@ -1,7 +1,7 @@
 # Mayoni.Code — Flip7 Design Redesign
 
 **Date**: 2026-07-31
-**Status**: Approved (design), pending implementation
+**Status**: Approved (design) + implemented (commits `8ea1d87`..`39527a0`, branch `main`)
 
 ## Purpose
 
@@ -29,6 +29,33 @@ Restyle the Mayoni.Code landing page (computer course for SD/SMP/SMA, Mojokerto)
 | `--surface-card` | `#FFFFFF` | Card backgrounds |
 | `--success` | `#27AE60` | WhatsApp CTA, positive states |
 | `--error` | `#E74C3C` | Error states (unused on this page) |
+| `--success-light` | `#35C26E` | WhatsApp CTA gradient start (impl.) |
+| `--cream-dark` | `#F5EDD6` | Wordmark plate depth, darker cream (impl.) |
+| `--navbar-bg` | `rgba(255,255,255,.88)` | Navbar glass background (impl.) |
+| `--gold-text-dark` | `#8A6D00` | Gold badge text on tint fills (impl.) |
+| `--text-main` | `#22514E` | Body text, deep teal-gray (impl.) |
+| `--text-muted` | `#5E7A78` | Secondary text (impl.) |
+| `--text-dim` | `#8FA8A6` | Dim/quiet text (impl.) |
+| `--tint-cream` | `#FFFDF2` | Soft cream surface fill (impl.) |
+| `--tint-gold` | `#FFF4CC` | Soft gold surface fill (impl.) |
+| `--tint-coral` | `#FDEDE7` | Soft coral surface fill (impl.) |
+| `--tint-cream-coral` | `#F7E8DA` | Ribbon tail fill, warm cream (impl.) |
+
+Implementation note: tokens marked (impl.) were added during implementation
+per the human-adjudicated token-purity rule ("Global Constraints govern" —
+every hardcoded color/shadow must live in `:root`). All values were fixed
+by that ruling; none change the approved design.
+
+### Borders & Overlays (impl.)
+
+| Token | Value | Usage |
+|---|---|---|
+| `--border-soft` | `rgba(0,0,0,.08)` | Subtle default borders |
+| `--border-teal` | `rgba(43,168,162,.2)` | Teal borders (info cards) |
+| `--border-teal-soft` | `rgba(43,168,162,.15)` | Softer teal borders (dashed section lines) |
+| `--border-teal-mid` | `rgba(43,168,162,.18)` | Price-card borders |
+| `--sheen-white` | `rgba(255,255,255,.55)` | Button gloss overlay (`.btn-gold::before`) |
+| `--sheen-white-soft` | `rgba(255,255,255,.4)` | Softer gloss (`.btn-wa::before`) |
 
 ### Typography
 
@@ -41,6 +68,7 @@ Restyle the Mayoni.Code landing page (computer course for SD/SMP/SMA, Mojokerto)
 
 - Base unit 0.25rem (≈4px). Spacing tokens: xs 0.25rem, sm 0.5rem, md 1rem, lg 1.5rem, xl 2rem.
 - Radius: sm 8px, md 16px, lg 24px, xl 32px, round 999px.
+- Radius (impl., outside the scale — component-specific): fan-card 10px, ribbon 6px, ribbon tails 4px (`--radius-fan-card`, `--radius-ribbon`, `--radius-ribbon-tail`).
 
 ### Shadows (colored glow system)
 
@@ -51,6 +79,10 @@ Restyle the Mayoni.Code landing page (computer course for SD/SMP/SMA, Mojokerto)
 - `shadow-accent-glow`: 0 4px 20px gold @40%.
 - `shadow-sky-glow`: 0 4px 16px sky @30%.
 - Rule: never plain black shadows on interactive elements.
+- (impl.) `--shadow-accent-glow-strong`: 0 6px 26px gold @55% (hero CTAs).
+- (impl.) `--shadow-success-glow`: 0 4px 20px green @40%; `--shadow-success-glow-strong`: 0 6px 28px green @55% (WhatsApp pill).
+- (impl.) soft hover glows: `--teal-glow-soft` 0 8px 28px teal @18%; `--accent-glow-soft` 0 8px 32px gold @50%; `--accent-glow-hover` 0 10px 36px gold @50% (featured card hover); `--coral-glow-soft` 0 8px 28px coral @20%.
+- (impl.) text/title shadows: `--shadow-title-teal` (wordmark light stroke), `--shadow-title-gold` (multi-layer gold wordmark stroke); `--navbar-scrolled-shadow` 0 2px 20px teal @15%.
 
 ## Page Structure (unchanged content)
 

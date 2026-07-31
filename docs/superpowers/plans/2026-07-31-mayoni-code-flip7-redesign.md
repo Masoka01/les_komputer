@@ -655,3 +655,24 @@ git commit -m "style: flip7 responsive polish and js cleanup"
 - **Spec coverage:** tokens (T1), fonts (T1), hero fan-cards/plate/ribbon (T2), pill CTAs + stats (T2), section emoji chips + dashed borders (T3), info cards with accents (T3), curriculum table + mobile cards + badges (T3), pricing featured gold (T4), discount ribbon (T4), footer + WhatsApp pill (T4), animations/reveal + responsive (T5), JS inline-color removal (T5), cok.webp/scanlines removal (T1). All spec items covered.
 - **Type consistency:** class names introduced (`.card`, `.card-gold`, `.btn`, `.btn-gold`, `.btn-ghost`, `.badge`, `.ribbon`, `.navbar-scrolled`, `.section-emoji`) are defined once and reused consistently across tasks.
 - **Placeholders:** none; every step carries concrete code or an exact verification action.
+
+---
+
+## Completion Notes (2026-07-31)
+
+**Status:** Implemented — all 5 tasks complete and approved (commits `8ea1d87`..`39527a0`, branch `main`). Per-task reviews and the final whole-branch review all passed; the final fix wave (tokenizing the remaining plan-mandated hardcoded values) re-reviewed clean.
+
+**Adjudications (human rulings):**
+- Global Constraints govern over brief verbatim CSS → every hardcoded color/shadow must live in `:root` and be referenced via `var()` (applied from Task 2 fix onward; final ruling on the last two plan-mandated values + radii: tokenize with byte-identical values).
+- Footer `#kontak` gains a 📞 emoji chip (approved design); `.cyan-text` class retained in markup but restyled gold.
+
+**Parked findings (Minor, not fixed — final whole-branch review):**
+- `index.html:251` `.price-gold` has no CSS rule (styling carried by `.price-featured`) — semantic class per plan; keep.
+- `index.html:106,115` `.info-card` has no CSS rule — survives as the code.js reveal hook; keep.
+- `les.css:273-274` `.card-coral` orphaned (no element uses it) — plan-mandated reusable class; keep.
+- `index.html:240,255,269` `.price-badge-top` wrapper has no CSS rule — harmless structural wrapper; keep.
+- `index.html:290` `.footer-inner` vestigial (pre-existing, never had a rule) — future cleanup.
+- `code.js:30` inline reveal transition permanently overrides card hover transitions — spec explicitly keeps observer logic as-is; future fix would clear `el.style.transition` on reveal complete.
+- Unused spec contract tokens (`--space-*`, `--radius-sm/xl`, `--shadow-sm`, `--shadow-teal-glow`, `--shadow-coral-glow`, `--shadow-sky-glow`, `--primary-light`, `--coral-light`, `--error`) — spec-mandated contract; compliant.
+
+**Post-implementation note:** `les.css` `:root` carries the full token set (approved list + implementation additions). The spec's token tables were synced to match.
