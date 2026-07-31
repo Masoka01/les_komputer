@@ -21,6 +21,7 @@
   --coral-dark:    #D45233;
 
   --cream:         #FFF8E7;
+  --cream-dark:    #F5EDD6;
   --sky:           #5DADE2;
   --surface-base:  #EFF8F7;
   --surface-card:  #FFFFFF;
@@ -39,13 +40,19 @@
 
   --radius-sm: 8px; --radius-md: 16px; --radius-lg: 24px; --radius-xl: 32px; --radius-round: 999px;
 
+  --border-soft:   rgba(0,0,0,.08);
+
   --shadow-sm: 0 2px 8px rgba(0,0,0,.08);
   --shadow-md: 0 4px 16px rgba(0,0,0,.12);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.16);
   --shadow-card: 0 4px 20px rgba(43,168,162,.10);
   --shadow-coral-glow: 0 4px 20px rgba(239,108,74,.35);
   --shadow-teal-glow: 0 4px 20px rgba(43,168,162,.30);
   --shadow-accent-glow: 0 4px 20px rgba(255,210,63,.40);
+  --shadow-accent-glow-strong: 0 6px 26px rgba(255,210,63,.55);
   --shadow-sky-glow: 0 4px 16px rgba(93,173,226,.30);
+  --shadow-title-teal: 0 2px 0 rgba(255,255,255,.6);
+  --shadow-title-gold: 0 1px 0 rgba(0,0,0,.25), 0 2px 0 rgba(0,0,0,.2), 0 4px 8px rgba(0,0,0,.3);
 }
 
 /* ─── RESET ────────────────────────────── */
@@ -110,16 +117,16 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 10px 24px;
+  padding: 12px 28px;
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: .9rem;
+  font-size: .95rem;
   letter-spacing: 1px;
   border: none;
   border-radius: var(--radius-round);
   text-decoration: none;
   cursor: pointer;
-  transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s;
+  transition: transform .2s cubic-bezier(.34,1.56,.64,1), box-shadow .2s, background .2s;
 }
 .btn:active { transform: scale(.95); }
 
@@ -135,7 +142,7 @@ body {
 .hero-fan-cards { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -88%);
   display: flex; gap: 8px; pointer-events: none; z-index: 0; }
 .fan-card { width: 54px; height: 84px; border-radius: 10px;
-  border: 2px solid rgba(0,0,0,.08); box-shadow: var(--shadow-md); }
+  border: 2px solid var(--border-soft); box-shadow: var(--shadow-md); }
 .fc-1 { transform: rotate(-24deg);  background: var(--primary-teal); }
 .fc-2 { transform: rotate(-12deg);  background: var(--accent-gold); }
 .fc-3 { transform: rotate(0deg);    background: var(--coral); }
@@ -152,16 +159,16 @@ body {
   position: relative; display: inline-block; background: var(--cream);
   border: 4px solid var(--primary-dark); border-radius: var(--radius-lg);
   padding: 18px 48px; transform: skewX(-6deg);
-  box-shadow: var(--shadow-lg, 0 8px 32px rgba(0,0,0,.16));
+  box-shadow: var(--shadow-lg);
 }
 .hero-title { font-family: var(--font-display); font-weight: 800; line-height: 1;
   font-size: clamp(2.8rem, 10vw, 4.5rem); letter-spacing: 2px;
   transform: skewX(6deg); } /* counter-skew to keep text upright */
-.t-teal { color: var(--primary-dark); text-shadow: 0 2px 0 rgba(255,255,255,.6); }
+.t-teal { color: var(--primary-dark); text-shadow: var(--shadow-title-teal); }
 .t-gold {
   color: var(--accent-gold); font-size: 1.25em; display: inline-block;
   transform: rotate(5deg);
-  text-shadow: 0 1px 0 rgba(0,0,0,.25), 0 2px 0 rgba(0,0,0,.2), 0 4px 8px rgba(0,0,0,.3);
+  text-shadow: var(--shadow-title-gold);
 }
 
 .ribbon { position: relative; display: inline-block; margin-top: 14px;
@@ -171,7 +178,7 @@ body {
   box-shadow: var(--shadow-md); }
 .ribbon::before, .ribbon::after {
   content: ''; position: absolute; top: 8px; width: 26px; height: 100%;
-  background: #F5EDD6; /* slightly darker cream */
+  background: var(--cream-dark); /* slightly darker cream */
   border: 3px solid var(--primary-dark); z-index: -1;
 }
 .ribbon::before { left: -12px; transform: skewX(-18deg); border-right: none; border-radius: 4px 0 0 4px; }
@@ -186,7 +193,8 @@ body {
 .btn-gold::before { content: ''; position: absolute; inset: 0;
   background: linear-gradient(180deg, rgba(255,255,255,.55), transparent 55%);
   pointer-events: none; }
-.btn-gold:hover { box-shadow: 0 6px 26px rgba(255,210,63,.55); transform: translateY(-2px); }
+.btn-gold:hover { box-shadow: var(--shadow-accent-glow-strong); transform: translateY(-2px); }
+.btn-gold:active { transform: scale(.95); }
 
 .btn-ghost { background: var(--surface-card); color: var(--primary-teal);
   border: 2px solid var(--primary-teal); box-shadow: var(--shadow-card); }
