@@ -319,7 +319,7 @@ body {
 .curr-badges { margin-bottom: 12px; }
 
 /* ─── PRICING CARDS ──────────────────────── */
-.pricing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 24px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 24px; }
 
 .price-card { position: relative; display: flex; flex-direction: column; align-items: center;
   background: var(--surface-card); border: 1px solid var(--border-teal-mid);
