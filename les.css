@@ -25,6 +25,7 @@
   --sky:           #5DADE2;
   --surface-base:  #EFF8F7;
   --surface-card:  #FFFFFF;
+  --navbar-bg:     rgba(255,255,255,.88);
   --success:       #27AE60;
   --success-light: #35C26E;
   --error:         #E74C3C;
@@ -38,7 +39,7 @@
   --text-main:     #22514E;   /* deep teal-gray, readable on light bg */
   --text-muted:    #5E7A78;
   --text-dim:      #8FA8A6;
-  --gold-text-dark:#8A6D00;   /* gold badge text on light tint */
+  --gold-text-dark: #8A6D00;   /* gold badge text on light tint */
 
   --font-display:  'Baloo 2', sans-serif;
   --font-body:     'Nunito', sans-serif;
@@ -47,6 +48,7 @@
   --space-lg: 1.5rem;  --space-xl: 2rem;
 
   --radius-sm: 8px; --radius-md: 16px; --radius-lg: 24px; --radius-xl: 32px; --radius-round: 999px;
+  --radius-fan-card: 10px; --radius-ribbon: 6px; --radius-ribbon-tail: 4px;
 
   --border-soft:   rgba(0,0,0,.08);
   --border-teal:   rgba(43,168,162,.2);
@@ -66,6 +68,8 @@
   --shadow-success-glow-strong: 0 6px 28px rgba(39,174,96,.55);
   --shadow-title-teal: 0 2px 0 rgba(255,255,255,.6);
   --shadow-title-gold: 0 1px 0 rgba(0,0,0,.25), 0 2px 0 rgba(0,0,0,.2), 0 4px 8px rgba(0,0,0,.3);
+
+  --navbar-scrolled-shadow: 0 2px 20px rgba(43,168,162,.15);
 
   --teal-glow-soft:   0 8px 28px rgba(43,168,162,.18);
   --accent-glow-soft: 0 8px 32px rgba(255,210,63,.5);
@@ -106,12 +110,12 @@ body {
 /* ─── NAVBAR ───────────────────────────── */
 .navbar {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(255,255,255,.88);
+  background: var(--navbar-bg);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--primary-bg);
   transition: box-shadow .3s;
 }
-.navbar.navbar-scrolled { box-shadow: 0 2px 20px rgba(43,168,162,.15); }
+.navbar.navbar-scrolled { box-shadow: var(--navbar-scrolled-shadow); }
 
 .nav-inner { max-width: 960px; margin: 0 auto; padding: 0 20px; height: 64px;
   display: flex; align-items: center; justify-content: space-between; }
@@ -163,7 +167,7 @@ body {
 
 .hero-fan-cards { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -88%);
   display: flex; gap: 8px; pointer-events: none; z-index: 0; }
-.fan-card { width: 54px; height: 84px; border-radius: 10px;
+.fan-card { width: 54px; height: 84px; border-radius: var(--radius-fan-card);
   border: 2px solid var(--border-soft); box-shadow: var(--shadow-md); }
 .fc-1 { transform: rotate(-24deg);  background: var(--primary-teal); }
 .fc-2 { transform: rotate(-12deg);  background: var(--accent-gold); }
@@ -194,7 +198,7 @@ body {
 }
 
 .ribbon { position: relative; display: inline-block; margin-top: 14px;
-  background: var(--cream); border: 3px solid var(--primary-dark); border-radius: 6px;
+  background: var(--cream); border: 3px solid var(--primary-dark); border-radius: var(--radius-ribbon);
   padding: 8px 32px; font-family: var(--font-display); font-weight: 800;
   font-size: .95rem; color: var(--primary-dark); letter-spacing: 3px;
   box-shadow: var(--shadow-md); }
@@ -203,8 +207,8 @@ body {
   background: var(--cream-dark); /* slightly darker cream */
   border: 3px solid var(--primary-dark); z-index: -1;
 }
-.ribbon::before { left: -12px; transform: skewX(-18deg); border-right: none; border-radius: 4px 0 0 4px; }
-.ribbon::after  { right: -12px; transform: skewX(18deg); border-left: none; border-radius: 0 4px 4px 0; }
+.ribbon::before { left: -12px; transform: skewX(-18deg); border-right: none; border-radius: var(--radius-ribbon-tail) 0 0 var(--radius-ribbon-tail); }
+.ribbon::after  { right: -12px; transform: skewX(18deg); border-left: none; border-radius: 0 var(--radius-ribbon-tail) var(--radius-ribbon-tail) 0; }
 
 /* ─── BUTTON MODIFIERS (base `.btn` from Task 1) ── */
 .btn-gold {
